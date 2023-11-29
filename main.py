@@ -7,6 +7,9 @@ import psycopg2
 from dotenv import load_dotenv
 import os
 
+#Create database
+db
+
 load_dotenv()
 dbname = os.getenv('DB_NAME')
 user = os.getenv('DB_USER')
@@ -40,8 +43,6 @@ def upload_image(name, image_file):
 
     return inserted_image_pil
 
-
-
 def get_uploaded_images():
     conn = psycopg2.connect(dbname=dbname, user=user, password=password, host=host)
     cur = conn.cursor()
@@ -51,23 +52,30 @@ def get_uploaded_images():
     images = []
     for image_name, image_data in cur:
         image_conv = convert_binary_image_to_pil_image(image_data)
-        # Add image to list of images
-        images.append((image_name, image_conv))
+        # Add image dictionary to list of images
+        images.append(image_conv)
 
     conn.close()
     return images
 
 
 
-interface = gr.Interface(
-    fn=upload_image,
-    inputs=[
-        gr.Textbox(label="Name"),
-        gr.File(label="Image"),
-    ],
-    outputs=[
-        gr.Image()
-    ],
-    title="Upload Image to PostgreSQL"
-)
-interface.launch(share=True)
+
+with gr.Blocks() as demo:
+    with gr.Column():
+        images = get_uploaded_images() 
+        interface = gr.Interface(
+            fn=upload_image,
+            inputs=[
+                gr.Textbox(label="Name"),
+                gr.File(label="Image"),
+            ],
+            outputs=[
+                gr.Image()
+            ],
+            title="Upload Image to PostgreSQL"
+        )
+        gr.Gallery(value=images, label="Generated images", show_label=False, elem_id="gallery", columns=[3], rows=[1], object_fit="contain")
+
+if __name__ == "__main__":
+    demo.launch()
