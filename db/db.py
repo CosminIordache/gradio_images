@@ -22,7 +22,8 @@ try:
         CREATE TABLE IF NOT EXISTS {table_name} (
             id SERIAL PRIMARY KEY,
             image_name VARCHAR(255) NOT NULL,
-            image_data BYTEA NOT NULL
+            image_data BYTEA NOT NULL,
+            image_category VARCHAR(255) NOT NULL
         );
     '''
     cursor.execute(create_table_query)
