@@ -89,13 +89,14 @@ def get_category_images():
         category.append(image_category)
 
     conn.close()
-    print(category)
     return category
 
+
 with gr.Blocks() as demo:
+    categories = get_category_images()
+    uploaded_images = get_uploaded_images()
+    
     with gr.Column():
-        images_update = get_uploaded_images() 
-        category_update = get_category_images()
         interface = gr.Interface(
             fn=upload_image,
             inputs=[
@@ -109,13 +110,20 @@ with gr.Blocks() as demo:
         )
         with gr.Row():
             btn = gr.Button("Update images", scale=0)
-            filter = gr.Dropdown(choices=category_update)
-            
-        gallery = gr.Gallery(value=images_update, columns=[3], show_download_button=True)
+            btn1 = gr.Button("Update category", scale=0)
+        
+        gallery = gr.Gallery(value=uploaded_images, columns=[3], show_download_button=True)
+        text = gr.Text(f"{categories}")
+        
         btn.click(get_uploaded_images, None, gallery)
+        btn1.click(get_category_images, None, text)
+
+        
+            
+        
 
 
 if __name__ == "__main__":
-    demo.title = "Sports Images"
+    demo.title = "Images"
     demo.launch()
     
