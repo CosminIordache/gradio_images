@@ -9,10 +9,12 @@ se categoriza automaticamente la imagen que esta subida a la base de datos.
 
 La base de datos se puede visualizar desde DBEAVER-CE. (Haciendo una conexion a postgres)
 
+Encendemos la base de datos
 ```bash
- docker compose up -d
+docker compose up -d
 ```
 
+Arrancamos el programa
 ```bash
 python3 main.py
 ```
