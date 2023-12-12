@@ -88,8 +88,10 @@ def get_category_images():
     for image_name, image_data, image_category in cur:
         category.append(image_category)
 
+    unique_category = list(set(category))
+
     conn.close()
-    return category
+    return unique_category
 
 
 with gr.Blocks() as demo:
@@ -117,11 +119,6 @@ with gr.Blocks() as demo:
         
         btn.click(get_uploaded_images, None, gallery)
         btn1.click(get_category_images, None, text)
-
-        
-            
-        
-
 
 if __name__ == "__main__":
     demo.title = "Images"
