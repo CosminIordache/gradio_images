@@ -1,4 +1,4 @@
-### Categorizacion de imagenes con GRADIO
+### Categorización de imagenes con GRADIO
 
 La base de datos esta echa en docker-compose mediante un .yaml
 
