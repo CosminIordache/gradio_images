@@ -1,4 +1,4 @@
-###Categorizacion de imagenes 
+### Categorizacion de imagenes con GRADIO
 
 La base de datos esta echa en docker-compose mediante un .yaml
 
@@ -10,9 +10,9 @@ se categoriza automaticamente la imagen que esta subida a la base de datos.
 La base de datos se puede visualizar desde DBEAVER-CE. (Haciendo una conexion a postgres)
 
 ```bash
-	 docker compose up -d
+ docker compose up -d
 ```
 
 ```bash
-	 python3 main.py
+python3 main.py
 ```
