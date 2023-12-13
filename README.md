@@ -1,7 +1,5 @@
 ### Categorización de imagenes con GRADIO
 
-[!IMPORTANT]
-
 La base de datos esta echa en docker-compose mediante un .yaml
 
 Para acceder a ella tenemos que encender el contenedor de la base de datos postgres.
