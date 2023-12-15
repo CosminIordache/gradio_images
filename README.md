@@ -46,7 +46,3 @@ python main.py
 ```
 
 Abre tu navegador web y accede a http://localhost:7860 para acceder a la interfaz de procesamiento de imágenes.
-
-```bash
-http://localhost:7860
-```
