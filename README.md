@@ -37,6 +37,7 @@ docker compose down
 ### Inicialización de la Base de Datos
 
 El script db/db.py inicializa la base de datos PostgreSQL creando una tabla llamada images. Utiliza la biblioteca psycopg2 para interactuar con la base de datos.
+La base de datos se puede ver en dbeaver, haciendo una conexion de postgresql. Desde dbeaver se controla las tablas y los datos de forma visual, tambien se puede hacer desde el archivo db.py mediante consultas.
 
 ### Procesamiento y Categorización de Imágenes
 
