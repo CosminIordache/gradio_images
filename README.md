@@ -11,3 +11,12 @@ Clona el repositorio:
 ```bash
 git clone https://github.com/tu-nombre/procesamiento-de-imagenes.git
 ```
+
+Crea un archivo .env en la raíz del proyecto y agrega las siguientes variables de entorno:
+```bash
+DB_NAME=images
+DB_USER=postgres
+DB_PASSWORD=postgres
+DB_HOST=localhost
+```
+
