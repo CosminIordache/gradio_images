@@ -9,7 +9,7 @@ https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-o
 ```
 #### Clona el repositorio:
 ```bash
-git clone https://github.com/tu-nombre/procesamiento-de-imagenes.git](https://github.com/CosminIordache/gradio_images.git)
+git clone https://github.com/CosminIordache/gradio_images.git
 ```
 
 Crea un archivo .env en la raíz del proyecto y agrega las siguientes variables de entorno:
