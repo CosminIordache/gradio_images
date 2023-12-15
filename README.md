@@ -20,7 +20,7 @@ DB_PASSWORD=postgres
 DB_HOST=localhost
 ```
 
-Docker 
+Docker
 Docker Compose es una herramienta que permite definir y ejecutar aplicaciones Docker de manera multi-contenedor. El archivo docker-compose.yml en este proyecto define la configuración de los servicios, redes y volúmenes necesarios para ejecutar la aplicación de procesamiento de imágenes con PostgreSQL.
 
 Iniciar docker
