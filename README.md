@@ -35,12 +35,15 @@ docker compose down
 ```
 
 Inicialización de la Base de Datos
+
 El script db/db.py inicializa la base de datos PostgreSQL creando una tabla llamada images. Utiliza la biblioteca psycopg2 para interactuar con la base de datos.
 
 Procesamiento y Categorización de Imágenes
+
 La funcionalidad principal del proyecto se implementa en main.py. El script utiliza la biblioteca gradio para crear una interfaz web simple para cargar imágenes, procesarlas con el modelo ViT y mostrar los resultados.
 
 Uso
+
 Ejecuta el script main.py para lanzar la interfaz web de Gradio:
 ```bash
 python main.py
